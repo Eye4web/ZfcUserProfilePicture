@@ -11,5 +11,5 @@ if (file_exists('../vendor/autoload.php')) {
     throw new RuntimeException('vendor/autoload.php could not be found. Did you run `php composer.phar install`?');
 }
 
-$loader->add('Eye4web\ZfcUserPmTest', __DIR__);
+$loader->add('Eye4web\ZfcUserProfilePictureTest', __DIR__);
 include 'TestConfig.php';
