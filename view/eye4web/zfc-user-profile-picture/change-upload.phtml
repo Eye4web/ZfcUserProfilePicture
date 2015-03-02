@@ -1,0 +1,14 @@
+<?php
+
+$form = $this->form;
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+var_dump($form->getMessages());
+
+echo $this->formFile($form->get('picture'));
+echo $this->formHidden($form->get('csrf'));
+echo $this->formSubmit($form->get('submit'));
+
+echo $this->form()->closeTag($form);
