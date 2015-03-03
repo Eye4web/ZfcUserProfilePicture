@@ -4,6 +4,7 @@ namespace Eye4web\ZfcUserProfilePictureTest\Form;
 
 use PHPUnit_Framework_TestCase;
 use Eye4web\ZfcUser\ProfilePicture\Form\UploadProfilePictureForm as Form;
+use Eye4web\ZfcUserProfilePictureTest\ConfigTest;
 
 class UploadProfilePictureFormTest extends PHPUnit_Framework_TestCase
 {
@@ -11,8 +12,7 @@ class UploadProfilePictureFormTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        global $testConfig;
-        $this->uploadProfilePictureForm = new Form($testConfig['uploadPath'], $testConfig['dimensions'], $testConfig['size']);
+        $this->uploadProfilePictureForm = new Form(ConfigTest::getConfig()['uploadPath'], ConfigTest::getConfig()['dimensions'], ConfigTest::getConfig()['size']);
     }
 
     /**

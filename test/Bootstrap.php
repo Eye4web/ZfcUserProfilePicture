@@ -12,4 +12,3 @@ if (file_exists('../vendor/autoload.php')) {
 }
 
 $loader->add('Eye4web\ZfcUserProfilePictureTest', __DIR__);
-include 'TestConfig.php';
