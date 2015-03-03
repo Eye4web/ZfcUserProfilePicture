@@ -97,12 +97,12 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
         ));
         $response = new Response();
 
-        $prg = $this->getMock('Zend\Mvc\Controller\Plugin\PostRedirectGet');
+        $prg = $this->getMock('Zend\Mvc\Controller\Plugin\FilePostRedirectGet');
         $this->pluginManagerPlugins['prg'] = $prg;
 
         $prg->expects($this->any())
             ->method('__invoke')
-            ->with('zfcuser/profilepicture/change/upload')
+            ->with($this->uploadProfilePictureForm, 'zfcuser/profilepicture/change/upload')
             ->will($this->returnValue($postRedirectGetReturn));
 
         if ($postRedirectGetReturn !== false && !($postRedirectGetReturn instanceof Response)) {
