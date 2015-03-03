@@ -107,11 +107,11 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
 
         if ($postRedirectGetReturn !== false && !($postRedirectGetReturn instanceof Response)) {
 
-            $this->uploadProfilePictureForm->expects($this->once())
+            $this->uploadProfilePictureForm->expects($this->any())
                 ->method('setData')
                 ->with($postRedirectGetReturn);
 
-            $this->uploadProfilePictureForm->expects($this->once())
+            $this->uploadProfilePictureForm->expects($this->any())
                 ->method('isValid')
                 ->will($this->returnValue((bool) $isValid));
 
