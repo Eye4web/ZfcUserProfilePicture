@@ -10,3 +10,4 @@
 - Added Factory\Form\UploadProfilePictureFormFactory test
 - Added Factory\Options\ModuleOptionsFactory test
 - Added Factory\Service\ProfilePictureServiceFactory test
+- Partially added Controller\ZfcUserProfilePictureController test
