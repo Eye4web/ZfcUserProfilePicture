@@ -6,3 +6,4 @@
 - Added Options\ModuleOptions test
 - Added Module test
 - Added Service\ProfilePicture test
+- Added Factory\Controller\ZfcUserProfilePictureControllerFactory test
