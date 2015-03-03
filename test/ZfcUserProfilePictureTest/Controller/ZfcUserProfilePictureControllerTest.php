@@ -89,7 +89,7 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
      *
      * @dataProvider providerTestChangeUploadAction
      */
-    public function testChangeUploadWithPostMethodAction($postRedirectGetReturn, $isValid)
+    public function testChangeUploadWithPostMethodAction($fileRedirectGetReturn, $isValid)
     {
         $controller = $this->controller;
         $this->setUpZfcUserAuthenticationPlugin(array(
@@ -103,13 +103,13 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
         $prg->expects($this->any())
             ->method('__invoke')
             ->with($this->uploadProfilePictureForm, 'zfcuser/profilepicture/change/upload')
-            ->will($this->returnValue($postRedirectGetReturn));
+            ->will($this->returnValue($fileRedirectGetReturn));
 
-        if ($postRedirectGetReturn !== false && !($postRedirectGetReturn instanceof Response)) {
+        if ($fileRedirectGetReturn !== false && !($fileRedirectGetReturn instanceof Response)) {
 
             $this->uploadProfilePictureForm->expects($this->any())
                 ->method('setData')
-                ->with($postRedirectGetReturn);
+                ->with($fileRedirectGetReturn);
 
             $this->uploadProfilePictureForm->expects($this->any())
                 ->method('isValid')
@@ -118,7 +118,7 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
             if ($isValid) {
                 $this->uploadProfilePictureForm->expects($this->any())
                     ->method('getData')
-                    ->will($this->returnValue($postRedirectGetReturn));
+                    ->will($this->returnValue($fileRedirectGetReturn));
 
                 $mockIdentity = $this->getMock('ZfcUser\Entity\UserInterface');
                 $authService = $this->getMock('Zend\Authentication\AuthenticationService');
@@ -128,7 +128,7 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
 
                 $this->profilePictureService->expects($this->any())
                     ->method('updateProfilePicture')
-                    ->with($postRedirectGetReturn['picture']['tmp_name'], $mockIdentity);
+                    ->with($fileRedirectGetReturn['picture']['tmp_name'], $mockIdentity);
 
 
                 $redirect = $this->getMock('Zend\Mvc\Controller\Plugin\Redirect');
@@ -138,16 +138,14 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
                          ->will($this->returnValue($response));
 
                 $this->pluginManagerPlugins['redirect']= $redirect;
-            } else {
-
             }
         }
 
         $result = $controller->changeUploadAction();
         $exceptedReturn = null;
 
-        if ($postRedirectGetReturn instanceof Response) {
-            $this->assertInstanceOf('Zend\Http\Response', $postRedirectGetReturn);
+        if ($fileRedirectGetReturn instanceof Response) {
+            $this->assertInstanceOf('Zend\Http\Response', $fileRedirectGetReturn);
         }  else {
 
         }
@@ -156,7 +154,7 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
     public function providerTestChangeUploadAction()
     {
         return array(
-            //   $postRedirectGetReturn, $isValid
+            //   $fileRedirectGetReturn, $isValid
             array(new Response(),  null),
             array(new Response(),  null),
 
