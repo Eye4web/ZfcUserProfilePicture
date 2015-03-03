@@ -4,3 +4,4 @@
 --------
 - Added Form\UploadProfilePictureForm test
 - Added Options\ModuleOptions test
+- Added Module test
