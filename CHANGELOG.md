@@ -7,3 +7,4 @@
 - Added Module test
 - Added Service\ProfilePicture test
 - Added Factory\Controller\ZfcUserProfilePictureControllerFactory test
+- Added Factory\Form\UploadProfilePictureFormFactory test
