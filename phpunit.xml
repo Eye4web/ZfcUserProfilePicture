@@ -1,0 +1,20 @@
+<phpunit bootstrap="test/Bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Eye4web ZfcUserProfilePictureTest">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory suffix=".php">./config</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./test/html-report/" charset="UTF-8" yui="true" />
+    </logging>
+</phpunit>
