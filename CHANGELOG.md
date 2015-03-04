@@ -11,3 +11,7 @@
 - Added Factory\Options\ModuleOptionsFactory test
 - Added Factory\Service\ProfilePictureServiceFactory test
 - Partially added Controller\ZfcUserProfilePictureController test
+
+2015-3-4
+--------
+- Update readme to apply this module ( no 5 & 6 )

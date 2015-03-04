@@ -39,3 +39,26 @@ Installation
 4. Copy `config/eye4web.zfcuser.profilepicture.global.php.dist` to `config/autoload/eye4web.zfcuser.profilepicture.global.php` and configure to your needs.
 
 5. Make your User Entity implement `Eye4web\ZfcUser\ProfilePicture\Entity\ProfilePictureInterface`
+
+    ```php
+    use Eye4web\ZfcUser\ProfilePicture\Entity\ProfilePictureInterface;
+    use ZfcUser\Entity\UserInterface;
+
+    class User implements ProfilePictureInterface, UserInterface
+    {
+        // ...
+        protected $profile_picture;
+
+        public function getProfilePicture()
+        {
+            return $this->profile_picture;
+        }
+
+        public function setProfilePicture($path)
+        {
+            $this->profile_picture = $path;
+        }
+    }
+    ```
+
+6. Make sure you've libmagic and fileinfo php extension installed.
