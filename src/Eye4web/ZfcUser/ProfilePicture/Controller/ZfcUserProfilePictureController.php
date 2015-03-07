@@ -39,10 +39,12 @@ class ZfcUserProfilePictureController extends AbstractActionController
         $this->config = $config;
     }
 
+    // @codeCoverageIgnoreStart
     public function changeUrlAction()
     {
 
     }
+    // @codeCoverageIgnoreEnd
 
     public function changeUploadAction()
     {
