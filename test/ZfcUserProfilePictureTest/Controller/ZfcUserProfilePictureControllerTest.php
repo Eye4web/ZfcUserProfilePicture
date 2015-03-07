@@ -106,7 +106,6 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
             ->will($this->returnValue($fileRedirectGetReturn));
 
         if ($fileRedirectGetReturn !== false && !($fileRedirectGetReturn instanceof Response)) {
-
             $this->uploadProfilePictureForm->expects($this->any())
                 ->method('setData')
                 ->with($fileRedirectGetReturn);
@@ -146,8 +145,7 @@ class ZfcUserProfilePictureControllerTest extends PHPUnit_Framework_TestCase
 
         if ($fileRedirectGetReturn instanceof Response) {
             $this->assertInstanceOf('Zend\Http\Response', $fileRedirectGetReturn);
-        }  else {
-
+        } else {
         }
     }
 
