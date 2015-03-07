@@ -1,6 +1,12 @@
 ZfcUserProfilePicture
 =======
 
+[![Build Status](https://travis-ci.org/Eye4web/ZfcUserProfilePicture.svg?branch=master)](https://travis-ci.org/Eye4web/ZfcUserProfilePicture)
+[![Test Coverage](https://codeclimate.com/github/Eye4web/ZfcUserProfilePicture/badges/coverage.svg)](https://codeclimate.com/github/Eye4web/ZfcUserProfilePicture)
+[![Code Climate](https://codeclimate.com/github/Eye4web/ZfcUserProfilePicture/badges/gpa.svg)](https://codeclimate.com/github/Eye4web/ZfcUserProfilePicture)
+[![Latest Stable Version](https://poser.pugx.org/eye4web/zfc-user-profile-picture/v/stable.svg)](https://packagist.org/packages/eye4web/zfc-user-profile-picture)
+[![License](https://poser.pugx.org/eye4web/zfc-user-profile-picture/license.svg)](https://packagist.org/packages/eye4web/zfc-user-profile-picture)
+
 Introduction
 ------------
 This module adds profile picture upload functionality to ZfcUser.
